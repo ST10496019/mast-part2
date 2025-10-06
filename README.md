@@ -42,8 +42,3 @@ Make sure you have:
 - **Java JDK 17+**
 
 
-### 2️ Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/ChristoffelsMenuManager_TS.git
-cd ChristoffelsMenuManager_TS
