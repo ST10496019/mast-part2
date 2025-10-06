@@ -31,9 +31,9 @@ The app provides an intuitive interface for viewing, editing, and organizing men
 
 ---
 
- Installation
+ ## Installation
 
-1️ Prerequisites
+### 1️ Prerequisites
 
 Make sure you have:
 - **Node.js** v18 or higher
@@ -42,7 +42,7 @@ Make sure you have:
 - **Java JDK 17+**
 
 
-2️ Clone the Repository
+### 2️ Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/ChristoffelsMenuManager_TS.git
