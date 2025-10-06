@@ -42,6 +42,9 @@ Make sure you have:
 - **Java JDK 17+**
 
 
+### Youtube Video:
+https://youtu.be/ipJXPHrKFC8?si=Cr3-JfOtbZf7wu5P
+
 ### Reference List (Harvard Anglia Ruskin Style)
 
 Facebook. (2025) React Native documentation. Available at: https://reactnative.dev/docs/getting-started
