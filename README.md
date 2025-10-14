@@ -1,8 +1,8 @@
-Christoffel’s Menu Manager
+## Christoffel’s Menu Manager
 
 Christoffel’s Menu Manager is a mobile application built with React Native (Expo) and TypeScript that helps restaurant owners and staff efficiently manage menu items. It provides an intuitive interface for creating, editing, viewing, and organizing dishes into categories.
 
-Overview
+## Overview
 
 This app is designed to make restaurant menu management easier and faster. Users can:
 
@@ -16,7 +16,7 @@ Organize dishes by category.
 
 Store data locally for offline access.
 
- Key Features
+## Key Features
 
  Menu Management: Add, edit, and delete dishes easily.
 
@@ -30,7 +30,7 @@ Store data locally for offline access.
 
  Settings & Context: Manage user preferences and maintain consistent app state.
 
- Project Structure
+ ## Project Structure
 ChristoffelsMenuManager_TS/
 ├── App.tsx                 # Main application entry
 ├── assets/                 # Images and media files
@@ -42,7 +42,7 @@ ChristoffelsMenuManager_TS/
 ├── tsconfig.json           # TypeScript configuration
 └── README.md               # Project documentation
 
- Tech Stack
+## Tech Stack
 Technology	Purpose
 React Native (Expo)	Mobile app framework
 TypeScript	Type-safe development
@@ -50,7 +50,7 @@ React Navigation	Screen navigation
 Context API	Global state management
 AsyncStorage	Local data storage
 Expo Image Picker	Image upload functionality
- Getting Started
+## Getting Started
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/ChristoffelsMenuManager_TS.git
 
@@ -73,14 +73,14 @@ or
 
 npm run ios
 
- Screens Overview
+## Screens Overview
 Screen	Description
 Home Screen	Displays all current menu items with images, names, and prices.
 Add Item Screen	Allows users to add a new menu item with details and an image.
 Edit Item Screen	Used to update or delete existing menu entries.
 Category Screen	Filters and displays items by category.
 Settings Screen	Allows customization of app preferences and general settings.
- References
+## References
 
 React Native Documentation — https://reactnative.dev/
 
