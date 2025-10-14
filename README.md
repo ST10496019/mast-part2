@@ -52,7 +52,6 @@ AsyncStorage	Local data storage
 Expo Image Picker	Image upload functionality
 ## Getting Started
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/ChristoffelsMenuManager_TS.git
 
 2️⃣ Install Dependencies
 npm install
