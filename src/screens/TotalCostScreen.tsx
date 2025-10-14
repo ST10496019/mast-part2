@@ -2,11 +2,12 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
+import { useDishes } from '../contexts/DishesContext';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'TotalCost'>;
 
-export default function TotalCostScreen({ route }: Props) {
-  const { dishes } = route.params || { dishes: [] };
+export default function TotalCostScreen(_: Props) {
+  const { dishes } = useDishes();
   const total = (dishes || []).reduce((sum, d) => sum + (parseFloat(String(d.price)) || 0), 0);
 
   return (

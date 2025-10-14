@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, Image } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList, Dish } from '../../App';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
+import { useDishes } from '../contexts/DishesContext';
+
 export default function WelcomeScreen({ navigation }: Props) {
-  const [dishes, setDishes] = useState<Dish[]>([]);
+  const { dishes } = useDishes();
 
   return (
     <View style={styles.container}>
@@ -17,11 +19,14 @@ export default function WelcomeScreen({ navigation }: Props) {
         data={dishes}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('DishDetails', { dish: item })}
+          >
             <Text style={styles.dishName}>{item.name}</Text>
             <Text style={styles.course}>{item.course}</Text>
             <Text style={styles.price}>R{item.price}</Text>
-          </View>
+          </TouchableOpacity>
         )}
         ListEmptyComponent={<Text style={styles.empty}>No Dishes Yet</Text>}
         style={{ width: '100%' }}
@@ -29,16 +34,23 @@ export default function WelcomeScreen({ navigation }: Props) {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('AddDish', { dishes, setDishes })}
+        onPress={() => navigation.navigate('AddDish')}
       >
         <Text style={styles.btnText}>Add New Dish</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={[styles.button, styles.secondary]}
-        onPress={() => navigation.navigate('TotalCost', { dishes })}
+  onPress={() => navigation.navigate('TotalCost')}
       >
         <Text style={styles.btnText}>View Total</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.button, { marginTop: 6, backgroundColor: '#333' }]}
+        onPress={() => navigation.navigate('Dish')}
+      >
+        <Text style={styles.btnText}>Browse by Course</Text>
       </TouchableOpacity>
     </View>
   );

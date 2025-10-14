@@ -3,19 +3,18 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, KeyboardAvo
 import { Picker } from '@react-native-picker/picker';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList, Dish } from '../../App';
+import { useDishes } from '../contexts/DishesContext';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'AddDish'>;
 
-export default function AddDishScreen({ navigation, route }: Props) {
-  const params = route.params as { dishes?: Dish[]; setDishes?: (d: Dish[]) => void } | undefined;
-  const dishes = params?.dishes ?? [];
-  const setDishes = params?.setDishes ?? (() => {});
+export default function AddDishScreen({ navigation }: Props) {
+  const { addDish } = useDishes();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [course, setCourse] = useState('Starter');
   const [price, setPrice] = useState('');
 
-  const addDish = () => {
+  const saveDish = () => {
     if (!name.trim() || !description.trim() || !price.trim()) {
       Alert.alert('Validation', 'Please fill all fields');
       return;
@@ -25,9 +24,9 @@ export default function AddDishScreen({ navigation, route }: Props) {
       Alert.alert('Validation', 'Enter a valid positive price');
       return;
     }
-    const newDish: Dish = { name: name.trim(), description: description.trim(), course, price: parsed };
-    setDishes([...dishes, newDish]);
-    navigation.goBack();
+  const newDish: Dish = { name: name.trim(), description: description.trim(), course, price: parsed };
+  addDish(newDish);
+  navigation.goBack();
   };
 
   return (
@@ -70,7 +69,7 @@ export default function AddDishScreen({ navigation, route }: Props) {
         keyboardType="numeric"
       />
 
-      <TouchableOpacity style={styles.button} onPress={addDish}>
+      <TouchableOpacity style={styles.button} onPress={saveDish}>
         <Text style={styles.btnText}>Save Dish</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>

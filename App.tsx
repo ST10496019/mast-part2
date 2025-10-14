@@ -6,12 +6,13 @@ import AddDishScreen from './src/screens/AddDishScreen';
 import DishScreen from './src/screens/DishScreen';
 import DishDetailsScreen from './src/screens/DishDetailsScreen';
 import TotalCostScreen from './src/screens/TotalCostScreen';
+import { DishesProvider } from './src/contexts/DishesContext';
 
 export type RootStackParamList = {
   Welcome: undefined;
   AddDish: { dishes: Dish[]; setDishes: (d: Dish[]) => void } | undefined;
   Dish: undefined;
-  DishDetails: { course?: string } | undefined;
+  DishDetails: { course?: string; dish?: Dish } | undefined;
   TotalCost: { dishes?: Dish[] } | undefined;
 };
 
@@ -26,7 +27,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <DishesProvider>
+      <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Welcome"
         screenOptions={{
@@ -41,6 +43,7 @@ export default function App() {
         <Stack.Screen name="DishDetails" component={DishDetailsScreen} options={{ title: 'Dish Details' }} />
         <Stack.Screen name="TotalCost" component={TotalCostScreen} options={{ title: 'Total Cost' }} />
       </Stack.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
+    </DishesProvider>
   );
 }
