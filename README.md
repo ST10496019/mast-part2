@@ -1,27 +1,93 @@
-Christoffel's Menu Manager (TypeScript) - React Native CLI compatible
+Christoffel’s Menu Manager
 
-This bundle contains the TypeScript source and assets for the app.
-To run it as a full React Native CLI project, follow these steps:
+Christoffel’s Menu Manager is a mobile application built with React Native (Expo) and TypeScript that helps restaurant owners and staff efficiently manage menu items. It provides an intuitive interface for creating, editing, viewing, and organizing dishes into categories.
 
-1) Create a new React Native CLI project (if you haven't yet):
-   npx react-native init ChristoffelsMenuManager --template react-native-template-typescript
+Overview
 
-2) Replace the generated project's App.tsx and src/ and assets/ contents with the files from this bundle.
-   - Copy App.tsx to the project root (overwrite)
-   - Copy src/ to the project root (overwrite src/)
-   - Copy assets/ to the project root (overwrite assets/)
-   - Update package.json dependencies in your project by adding:
-     @react-navigation/native, @react-navigation/native-stack, @react-native-picker/picker, react-native-safe-area-context, react-native-screens
+This app is designed to make restaurant menu management easier and faster. Users can:
 
-3) Install dependencies in your project folder:
-   npm install
-   npx pod-install ios   # if on macOS and targeting iOS
+Add new dishes with names, prices, and descriptions.
 
-4) Run the app:
-   npx react-native run-android
-   or
-   npx react-native run-ios
+Upload or select images for each dish.
 
-Notes:
-- This bundle provides source files (TSX) and will integrate into a real RN CLI project created via the TypeScript template.
-- If you want, I can instead generate the full native android/ios folders — but that is large. Most devs create a RN CLI project and replace source files as above.
+Edit or remove existing items.
+
+Organize dishes by category.
+
+Store data locally for offline access.
+
+ Key Features
+
+ Menu Management: Add, edit, and delete dishes easily.
+
+ Image Uploads: Attach images from device gallery or camera.
+
+ Search and Filter: Quickly find menu items.
+
+ Categorization: Group items by menu sections.
+
+ Local Storage: Save data with AsyncStorage or local state.
+
+ Settings & Context: Manage user preferences and maintain consistent app state.
+
+ Project Structure
+ChristoffelsMenuManager_TS/
+├── App.tsx                 # Main application entry
+├── assets/                 # Images and media files
+├── src/
+│   ├── contexts/           # App-wide state and context management
+│   ├── screens/            # App screens (UI for each feature)
+│   └── components/         # Reusable visual components
+├── package.json            # Dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+└── README.md               # Project documentation
+
+ Tech Stack
+Technology	Purpose
+React Native (Expo)	Mobile app framework
+TypeScript	Type-safe development
+React Navigation	Screen navigation
+Context API	Global state management
+AsyncStorage	Local data storage
+Expo Image Picker	Image upload functionality
+ Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/ChristoffelsMenuManager_TS.git
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Start the Expo Development Server
+npx expo start
+
+4️⃣ Run the App
+
+📱 Scan the QR code with the Expo Go app, or
+
+💻 Run on emulator:
+
+npm run android
+
+
+or
+
+npm run ios
+
+ Screens Overview
+Screen	Description
+Home Screen	Displays all current menu items with images, names, and prices.
+Add Item Screen	Allows users to add a new menu item with details and an image.
+Edit Item Screen	Used to update or delete existing menu entries.
+Category Screen	Filters and displays items by category.
+Settings Screen	Allows customization of app preferences and general settings.
+ References
+
+React Native Documentation — https://reactnative.dev/
+
+Expo Documentation — https://docs.expo.dev/
+
+TypeScript Handbook — https://www.typescriptlang.org/docs/
+
+React Navigation — https://reactnavigation.org/
+
+AsyncStorage — https://react-native-async-storage.github.io/async-storage/
